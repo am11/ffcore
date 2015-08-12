@@ -1,0 +1,32 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+[version(1.0), uuid(3f20f845-1433-418c-91df-6b1d270df9c6)]
+library FerretFace
+{
+	[object, dual, uuid(7d595d6f-8ca2-4632-9053-a9121a06ffda)]
+	interface IInteropServices : IDispatch
+	{
+		HRESULT GetInteropService(REFGUID serviceId, [out, retval] IUnknown **service);
+		HRESULT SetInteropService(REFGUID serviceId, IUnknown *service);
+	}
+
+	[object, dual, uuid(8227173d-c693-4c34-9d10-9b41acbb6d77)]
+	interface IManagedGlobals : IDispatch
+	{
+		HRESULT Startup(IInteropServices *hostServices);
+		void Shutdown();
+	}
+
+	[uuid(06f37a4d-bcd1-4147-9738-b1cb8a331e9b)]
+	coclass HostControl
+	{
+		interface IInteropServices;
+	}
+
+	[uuid(afdbf938-f94a-49c8-8467-5a1a70d0e825)]
+	coclass InteropServices
+	{
+		interface IInteropServices;
+	}
+}

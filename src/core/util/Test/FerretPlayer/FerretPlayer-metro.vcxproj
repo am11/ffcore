@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{781dedee-05d1-482d-ada4-bc7d3c2b0534}</ProjectGuid>
+    <AppType>Metro</AppType>
+    <ConfigurationType>Application</ConfigurationType>
+    <ProjectName>FerretPlayer</ProjectName>
+    <RootNamespace>FerretPlayer</RootNamespace>
+  </PropertyGroup>
+  <Import Project="..\..\..\..\..\msbuild\cpp.props" />
+  <PropertyGroup>
+    <PackageCertificateThumbprint>C14986DD138AACFA3C23D75D59D5D268042D1FE5</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>FerretPlayer_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="App.xaml.h">
+      <DependentUpon>App.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="AppGlobals.h" />
+    <ClInclude Include="MainPage.xaml.h">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="MusicControl.xaml.h">
+      <DependentUpon>MusicControl.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="MusicModel.h" />
+    <ClInclude Include="pch.h" />
+    <ClCompile Include="AppGlobals.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="App.xaml.cpp">
+      <DependentUpon>App.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="MainPage.xaml.cpp">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="MusicControl.xaml.cpp">
+      <DependentUpon>MusicControl.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="MusicModel.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Image Include="Assets\volume-delay.png" />
+    <Image Include="Assets\volume-delay2.png" />
+    <Page Include="MainPage.xaml" />
+    <Page Include="MusicControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles.xaml" />
+    <None Include="FerretPlayer_TemporaryKey.pfx" />
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Image Include="Assets\action_pause.png" />
+    <Image Include="Assets\action_play.png" />
+    <Image Include="Assets\action_play_backward.png" />
+    <Image Include="Assets\action_play_forward.png" />
+    <Image Include="Assets\action_stop.png" />
+    <Image Include="Assets\folder_open.png" />
+    <Image Include="Assets\Logo.scale-100.png" />
+    <Image Include="Assets\SmallLogo.scale-100.png" />
+    <Image Include="Assets\speaker-volume.png" />
+    <Image Include="Assets\SplashScreen.scale-100.png" />
+    <Image Include="Assets\StoreLogo.scale-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\util-metro.vcxproj">
+      <Project>{eff8144d-f91e-4bbd-b09b-d6db6b3a5512}</Project>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(DevRoot)\msbuild\cpp.targets" />
+</Project>

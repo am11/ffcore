@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ProjectName>util</ProjectName>
+    <ProjectGuid>{8877ef09-1cdd-4e67-95ba-58e3b251b7d8}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="..\..\..\msbuild\cpp.props" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\dxtex;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\utf8;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>
+        delayimp.lib;
+        oldnames.lib;
+        d3d11.lib;
+        dinput8.lib;
+        dxgi.lib;
+        dxguid.lib;
+        xinput.lib;
+        comctl32.lib;
+        mfplat.lib;
+        mfreadwrite.lib;
+        mfuuid.lib;
+        mscoree.lib;
+        setupapi.lib;
+        winmm.lib;
+        %(AdditionalDependencies)
+      </AdditionalDependencies>
+      <DelayLoadDLLs>
+        advapi32.dll;
+        comctl32.dll;
+        d3d11.dll;
+        dinput8.dll;
+        dxgi.dll;
+        gdi32.dll;
+        mfplat.dll;
+        mfreadwrite.dll;
+        mscoree.dll;
+        ole32.dll;
+        oleaut32.dll;
+        setupapi.dll;
+        shell32.dll;
+        user32.dll;
+        winmm.dll;
+        xinput1_4.dll;
+        %(DelayLoadDLLs)
+      </DelayLoadDLLs>
+      <DelayLoadDLLs Condition=" '$(Configuration)' != 'Debug' ">msvcp140.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <DelayLoadDLLs Condition=" '$(Configuration)' == 'Debug' ">msvcp140d.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <ModuleDefinitionFile>Resource\util.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dxtex\dxtex.vcxproj">
+      <Project>{fb3fbbcf-8cf9-4c53-8baa-d451f3f79b42}</Project>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <ProjectReference Include="..\zlib\zlib.vcxproj">
+      <Project>{968d9f08-835d-4844-a809-51a3efb915ac}</Project>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Audio\AudioBuffer.cpp" />
+    <ClCompile Include="Audio\AudioDevice.cpp" />
+    <ClCompile Include="Audio\AudioEffect.cpp" />
+    <ClCompile Include="Audio\AudioFactory.cpp" />
+    <ClCompile Include="Audio\AudioMusic.cpp" />
+    <ClCompile Include="Audio\AudioStream.cpp" />
+    <ClCompile Include="Audio\DestroyVoice.cpp" />
+    <ClCompile Include="CLR\ClrHost.cpp" />
+    <ClCompile Include="CLR\HostControl.cpp" />
+    <ClCompile Include="CLR\InteropServices.cpp" />
+    <ClCompile Include="COM\ComBase.cpp" />
+    <ClCompile Include="COM\ComConnectionHelpers.cpp" />
+    <ClCompile Include="COM\ComConnectionPoint.cpp" />
+    <ClCompile Include="COM\ComFactory.cpp" />
+    <ClCompile Include="COM\ComListener.cpp" />
+    <ClCompile Include="COM\ComUtil.cpp" />
+    <ClCompile Include="COM\ServiceCollection.cpp" />
+    <ClCompile Include="Core\AssertUtil.cpp" />
+    <ClCompile Include="Data\AsyncDataLoader.cpp" />
+    <ClCompile Include="Data\Compression.cpp" />
+    <ClCompile Include="Data\Data.cpp" />
+    <ClCompile Include="Data\DataFile.cpp" />
+    <ClCompile Include="Data\DataPersist.cpp" />
+    <ClCompile Include="Data\DataWriterReader.cpp" />
+    <ClCompile Include="Data\SavedData.cpp" />
+    <ClCompile Include="Data\Stream.cpp" />
+    <ClCompile Include="Dict\Dict.cpp" />
+    <ClCompile Include="Dict\DictPersist.cpp" />
+    <ClCompile Include="Dict\JsonPersist.cpp" />
+    <ClCompile Include="Dict\JsonTokenizer.cpp" />
+    <ClCompile Include="Dict\SmallDict.cpp" />
+    <ClCompile Include="Dict\Value.cpp" />
+    <ClCompile Include="DllMain.cpp" />
+    <ClCompile Include="Entity\EntityDomain.cpp" />
+    <ClCompile Include="Entity\EntityDomainStack.cpp" />
+    <ClCompile Include="Entity\EntityEvents.cpp" />
+    <ClCompile Include="Entity\EntitySystemBase.cpp" />
+    <ClCompile Include="Entity\Internal\Component.cpp" />
+    <ClCompile Include="Entity\Internal\ComponentFactory.cpp" />
+    <ClCompile Include="Entity\Internal\EntitySystem.cpp" />
+    <ClCompile Include="Globals\GlobalsScope.cpp" />
+    <ClCompile Include="Globals\MetroProcessGlobals.cpp" />
+    <ClCompile Include="Globals\ProcessGlobals.cpp" />
+    <ClCompile Include="Globals\ProcessStartup.cpp" />
+    <ClCompile Include="Globals\ThreadGlobals.cpp" />
+    <ClCompile Include="Globals\WinProcessGlobals.cpp" />
+    <ClCompile Include="Graph\2D\2dEffect.cpp" />
+    <ClCompile Include="Graph\2D\2dRenderer.cpp" />
+    <ClCompile Include="Graph\2D\Sprite.cpp" />
+    <ClCompile Include="Graph\2D\SpriteAnimation.cpp" />
+    <ClCompile Include="Graph\2D\SpriteList.cpp" />
+    <ClCompile Include="Graph\2D\SpriteOptimizer.cpp" />
+    <ClCompile Include="Graph\2D\SpritePos.cpp" />
+    <ClCompile Include="Graph\Anim\AnimKeys.cpp" />
+    <ClCompile Include="Graph\Anim\AnimPos.cpp" />
+    <ClCompile Include="Graph\BufferCache.cpp" />
+    <ClCompile Include="Graph\Data\DataBlob.cpp" />
+    <ClCompile Include="Graph\Data\GraphCategory.cpp" />
+    <ClCompile Include="Graph\Font\FontData.cpp" />
+    <ClCompile Include="Graph\Font\SpriteFont.cpp" />
+    <ClCompile Include="Graph\GraphDevice.cpp" />
+    <ClCompile Include="Graph\GraphFactory.cpp" />
+    <ClCompile Include="Graph\GraphShader.cpp" />
+    <ClCompile Include="Graph\GraphState.cpp" />
+    <ClCompile Include="Graph\GraphStateCache.cpp" />
+    <ClCompile Include="Graph\GraphTexture.cpp" />
+    <ClCompile Include="Graph\RenderTarget\RenderDepth.cpp" />
+    <ClCompile Include="Graph\RenderTarget\RenderTargetTexture.cpp" />
+    <ClCompile Include="Graph\RenderTarget\RenderTargetWindow.cpp" />
+    <ClCompile Include="Graph\RenderTarget\RenderTargetWindowMetro.cpp" />
+    <ClCompile Include="Graph\VertexFormat.cpp" />
+    <ClCompile Include="Input\GlobalDirectInput.cpp" />
+    <ClCompile Include="Input\InputMapping.cpp" />
+    <ClCompile Include="Input\JoystickInput.cpp" />
+    <ClCompile Include="Input\KeyboardDevice.cpp" />
+    <ClCompile Include="Input\KeyboardDeviceMetro.cpp" />
+    <ClCompile Include="Input\LegacyJoystick.cpp" />
+    <ClCompile Include="Input\MouseDevice.cpp" />
+    <ClCompile Include="Input\MouseDeviceMetro.cpp" />
+    <ClCompile Include="Input\PointerListener.cpp" />
+    <ClCompile Include="Input\TouchDevice.cpp" />
+    <ClCompile Include="Input\TouchDeviceMetro.cpp" />
+    <ClCompile Include="Input\XboxJoystick.cpp" />
+    <ClCompile Include="Module\MetroModule.cpp" />
+    <ClCompile Include="Module\Module.cpp" />
+    <ClCompile Include="Module\ModuleFactory.cpp" />
+    <ClCompile Include="Module\Modules.cpp" />
+    <ClCompile Include="Module\WinModule.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Resource\ResourceHandle.cpp" />
+    <ClCompile Include="String\String.cpp" />
+    <ClCompile Include="String\StringAlloc.cpp" />
+    <ClCompile Include="String\StringCache.cpp" />
+    <ClCompile Include="String\StringManager.cpp" />
+    <ClCompile Include="String\StringUtil.cpp" />
+    <ClCompile Include="String\SysString.cpp" />
+    <ClCompile Include="Thread\Mutex.cpp" />
+    <ClCompile Include="Thread\ReaderWriterLock.cpp" />
+    <ClCompile Include="Thread\ThreadPool.cpp" />
+    <ClCompile Include="Thread\ThreadPoolMetro.cpp" />
+    <ClCompile Include="Thread\ThreadPoolShared.cpp" />
+    <ClCompile Include="Thread\ThreadUtil.cpp" />
+    <ClCompile Include="Types\Hash.cpp" />
+    <ClCompile Include="Types\MemAlloc.cpp" />
+    <ClCompile Include="UI\MainWindow.cpp" />
+    <ClCompile Include="UI\ViewWindow.cpp" />
+    <ClCompile Include="Windows\FileUtil.cpp" />
+    <ClCompile Include="Windows\Handles.cpp" />
+    <ClCompile Include="Windows\RegUtil.cpp" />
+    <ClCompile Include="Windows\WinUtil.cpp" />
+    <ClInclude Include="App\AppGlobals.h" />
+    <ClInclude Include="App\AppTime.h" />
+    <ClInclude Include="App\Commands.h" />
+    <ClInclude Include="App\EventTimer.h" />
+    <ClInclude Include="App\Idle.h" />
+    <ClInclude Include="App\Log.h" />
+    <ClInclude Include="App\MostRecentlyUsed.h" />
+    <ClInclude Include="App\SplashScreen.h" />
+    <ClInclude Include="App\Timer.h" />
+    <ClCompile Include="App\AppGlobals.cpp" />
+    <ClCompile Include="App\AppTime.cpp" />
+    <ClCompile Include="App\Commands.cpp" />
+    <ClCompile Include="App\EventTimer.cpp" />
+    <ClCompile Include="App\Idle.cpp" />
+    <ClCompile Include="App\Log.cpp" />
+    <ClCompile Include="App\MostRecentlyUsed.cpp" />
+    <ClCompile Include="App\SplashScreen.cpp" />
+    <ClCompile Include="App\Timer.cpp" />
+    <ClInclude Include="Audio\AudioBuffer.h" />
+    <ClInclude Include="Audio\AudioDevice.h" />
+    <ClInclude Include="Audio\AudioDeviceChild.h" />
+    <ClInclude Include="Audio\AudioEffect.h" />
+    <ClInclude Include="Audio\AudioFactory.h" />
+    <ClInclude Include="Audio\AudioMusic.h" />
+    <ClInclude Include="Audio\AudioPlaying.h" />
+    <ClInclude Include="Audio\AudioStream.h" />
+    <ClInclude Include="Audio\DestroyVoice.h" />
+    <ClInclude Include="CLR\ClrHost.h" />
+    <ClInclude Include="CLR\HostControl.h" />
+    <ClInclude Include="CLR\InteropServices.h" />
+    <ClInclude Include="COM\ComAlloc.h" />
+    <ClInclude Include="COM\ComBase.h" />
+    <ClInclude Include="COM\ComConnectionHelpers.h" />
+    <ClInclude Include="COM\ComConnectionPoint.h" />
+    <ClInclude Include="COM\ComFactory.h" />
+    <ClInclude Include="COM\ComInclude.h" />
+    <ClInclude Include="COM\ComListener.h" />
+    <ClInclude Include="COM\ComObject.h" />
+    <ClInclude Include="COM\ComPch.h" />
+    <ClInclude Include="COM\ComPtr.h" />
+    <ClInclude Include="COM\ComUtil.h" />
+    <ClInclude Include="COM\ServiceCollection.h" />
+    <ClInclude Include="Core\AssertUtil.h" />
+    <ClInclude Include="Core\ConstantsPch.h" />
+    <ClInclude Include="Core\CrtPch.h" />
+    <ClInclude Include="Core\DelayLoadInclude.h" />
+    <ClInclude Include="Core\FunctionsPch.h" />
+    <ClInclude Include="Data\AsyncDataLoader.h" />
+    <ClInclude Include="Data\Compression.h" />
+    <ClInclude Include="Data\Data.h" />
+    <ClInclude Include="Data\DataFile.h" />
+    <ClInclude Include="Data\DataPersist.h" />
+    <ClInclude Include="Data\DataWriterReader.h" />
+    <ClInclude Include="Data\SavedData.h" />
+    <ClInclude Include="Data\Stream.h" />
+    <ClInclude Include="Dict\Dict.h" />
+    <ClInclude Include="Dict\DictPersist.h" />
+    <ClInclude Include="Dict\JsonPersist.h" />
+    <ClInclude Include="Dict\JsonTokenizer.h" />
+    <ClInclude Include="Dict\SmallDict.h" />
+    <ClInclude Include="Dict\Value.h" />
+    <ClInclude Include="Entity\ComponentBase.h" />
+    <ClInclude Include="Entity\Entity.h" />
+    <ClInclude Include="Entity\EntityDomain.h" />
+    <ClInclude Include="Entity\EntityDomainStack.h" />
+    <ClInclude Include="Entity\EntityEvents.h" />
+    <ClInclude Include="Entity\EntitySystemBase.h" />
+    <ClInclude Include="Entity\Internal\Component.h" />
+    <ClInclude Include="Entity\Internal\ComponentFactory.h" />
+    <ClInclude Include="Entity\Internal\ComponentFactoryImpl.h" />
+    <ClInclude Include="Entity\Internal\EntityDomainImpl.h" />
+    <ClInclude Include="Entity\Internal\EntitySystem.h" />
+    <ClInclude Include="Entity\Internal\EntitySystemBaseImpl.h" />
+    <ClInclude Include="Globals\GlobalsScope.h" />
+    <ClInclude Include="Globals\MetroProcessGlobals.h" />
+    <ClInclude Include="Globals\ProcessGlobals.h" />
+    <ClInclude Include="Globals\ProcessStartup.h" />
+    <ClInclude Include="Globals\ThreadGlobals.h" />
+    <ClInclude Include="Globals\WinProcessGlobals.h" />
+    <ClInclude Include="Graph\2D\2dEffect.h" />
+    <ClInclude Include="Graph\2D\2dRenderer.h" />
+    <ClInclude Include="Graph\2D\Sprite.h" />
+    <ClInclude Include="Graph\2D\SpriteAnimation.h" />
+    <ClInclude Include="Graph\2D\SpriteList.h" />
+    <ClInclude Include="Graph\2D\SpriteOptimizer.h" />
+    <ClInclude Include="Graph\2D\SpritePos.h" />
+    <ClInclude Include="Graph\Anim\AnimKeys.h" />
+    <ClInclude Include="Graph\Anim\AnimPos.h" />
+    <ClInclude Include="Graph\Anim\KeyFrames.h" />
+    <ClInclude Include="Graph\BufferCache.h" />
+    <ClInclude Include="Graph\Data\DataBlob.h" />
+    <ClInclude Include="Graph\Data\GraphCategory.h" />
+    <ClInclude Include="Graph\DirectXPch.h" />
+    <ClInclude Include="Graph\Font\FontData.h" />
+    <ClInclude Include="Graph\Font\SpriteFont.h" />
+    <ClInclude Include="Graph\GraphDevice.h" />
+    <ClInclude Include="Graph\GraphDeviceChild.h" />
+    <ClInclude Include="Graph\GraphFactory.h" />
+    <ClInclude Include="Graph\GraphShader.h" />
+    <ClInclude Include="Graph\GraphState.h" />
+    <ClInclude Include="Graph\GraphStateCache.h" />
+    <ClInclude Include="Graph\GraphTexture.h" />
+    <ClInclude Include="Graph\RenderTarget\RenderTarget.h" />
+    <ClInclude Include="Graph\VertexFormat.h" />
+    <ClInclude Include="Input\GlobalDirectInput.h" />
+    <ClInclude Include="Input\InputDevice.h" />
+    <ClInclude Include="Input\InputMapping.h" />
+    <ClInclude Include="Input\JoystickDevice.h" />
+    <ClInclude Include="Input\JoystickInput.h" />
+    <ClInclude Include="Input\KeyboardDevice.h" />
+    <ClInclude Include="Input\MouseDevice.h" />
+    <ClInclude Include="Input\PointerListener.h" />
+    <ClInclude Include="Input\TouchDevice.h" />
+    <ClInclude Include="MainUtilInclude.h" />
+    <ClInclude Include="Module\MetroModule.h" />
+    <ClInclude Include="Module\Module.h" />
+    <ClInclude Include="Module\ModuleFactory.h" />
+    <ClInclude Include="Module\ModuleInclude.h" />
+    <ClInclude Include="Module\Modules.h" />
+    <ClInclude Include="Module\WinModule.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="Resource\ResourceContext.h" />
+    <ClInclude Include="Resource\ResourceHandle.h" />
+    <ClInclude Include="Resource\util-resource.h" />
+    <ClInclude Include="String\String.h" />
+    <ClInclude Include="String\StringAlloc.h" />
+    <ClInclude Include="String\StringCache.h" />
+    <ClInclude Include="String\StringManager.h" />
+    <ClInclude Include="String\StringUtil.h" />
+    <ClInclude Include="String\SysString.h" />
+    <ClInclude Include="Thread\Mutex.h" />
+    <ClInclude Include="Thread\ReaderWriterLock.h" />
+    <ClInclude Include="Thread\ThreadPool.h" />
+    <ClInclude Include="Thread\ThreadUtil.h" />
+    <ClInclude Include="Types\Hash.h" />
+    <ClInclude Include="Types\KeyValue.h" />
+    <ClInclude Include="Types\List.h" />
+    <ClInclude Include="Types\Map.h" />
+    <ClInclude Include="Types\MemAlloc.h" />
+    <ClInclude Include="Types\Point.h" />
+    <ClInclude Include="Types\PoolAllocator.h" />
+    <ClInclude Include="Types\Rect.h" />
+    <ClInclude Include="Types\Set.h" />
+    <ClInclude Include="Types\SharedObject.h" />
+    <ClInclude Include="Types\SmartPtr.h" />
+    <ClInclude Include="Types\Vector.h" />
+    <ClInclude Include="UI\IMainWindow.h" />
+    <ClInclude Include="UI\IMainWindowHost.h" />
+    <ClInclude Include="UI\IViewWindow.h" />
+    <ClInclude Include="UI\MainWindow.h" />
+    <ClInclude Include="UI\ViewWindow.h" />
+    <ClInclude Include="UtilApi.h" />
+    <ClInclude Include="Windows\FileUtil.h" />
+    <ClInclude Include="Windows\Handles.h" />
+    <ClInclude Include="Windows\RegUtil.h" />
+    <ClInclude Include="Windows\WindowsPch.h" />
+    <ClInclude Include="Windows\WinUtil.h" />
+    <Midl Include="CLR\FerretFace.Interop.idl" />
+    <None Include="Resource\util.def" />
+    <ResourceCompile Include="Resource\util-resource.rc" />
+    <Pack4 Include="Graph\Shader\Shaders.pack4.txt" />
+    <None Include="Graph\Shader\Shaders.pack4.txt" />
+    <None Include="Graph\Shader\2d.hlsl" />
+    <None Include="Graph\Shader\3d.hlsl" />
+    <None Include="Graph\Shader\Struct.hlsli" />
+    <None Include="Graph\Shader\Vertex.hlsli" />
+  </ItemGroup>
+  <Import Project="$(DevRoot)\msbuild\cpp.targets" />
+  <PropertyGroup>
+    <AfterMidlTargets>BuildTypelib;$(AfterMidlTargets)</AfterMidlTargets>
+  </PropertyGroup>
+  <Target Name="BuildTypelib" Inputs="$(GeneratedFilesDir)FerretFace.Interop.tlb" Outputs="$(OutDir)FerretFace.Interop.dll">
+    <Exec Command="&quot;$(TargetFrameworkSDKToolsDirectory)tlbimp.exe&quot; &quot;$(GeneratedFilesDir)FerretFace.Interop.tlb&quot; /out:&quot;$(OutDir)FerretFace.Interop.dll&quot; /nologo /silent /primary /strictref /strictref:nopia /asmversion:1.0.0.0 /keyfile:&quot;$(KeyFile)&quot; /unsafe /namespace:FerretFace.Interop" />
+  </Target>
+</Project>

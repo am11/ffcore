@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="App.xaml.cpp" />
+    <ClCompile Include="MainPage.xaml.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="AppGlobals.cpp" />
+    <ClCompile Include="MusicControl.xaml.cpp" />
+    <ClCompile Include="MusicModel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App.xaml.h" />
+    <ClInclude Include="MainPage.xaml.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="AppGlobals.h" />
+    <ClInclude Include="MusicControl.xaml.h" />
+    <ClInclude Include="MusicModel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Logo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SmallLogo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\StoreLogo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\folder_open.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\action_pause.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\action_play.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\action_play_backward.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\action_play_forward.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\action_stop.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\speaker-volume.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\volume-delay2.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\volume-delay.png">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FerretPlayer_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainPage.xaml" />
+    <Page Include="Styles.xaml" />
+    <Page Include="MusicControl.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{1035b894-8b5b-438f-a046-2105ae5d5684}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

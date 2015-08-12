@@ -1,0 +1,37 @@
+﻿<Page
+    x:Class="FerretPlayer.MainPage"
+    xmlns:local="using:FerretPlayer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Loaded="OnLoaded"
+    Unloaded="OnUnloaded">
+
+    <UserControl.Resources>
+        <Style TargetType="local:MusicControl">
+            <Setter Property="Width" Value="300" />
+            <Setter Property="Margin" Value="20" />
+        </Style>
+    </UserControl.Resources>
+
+    <SwapChainBackgroundPanel>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <local:MusicControl Grid.Column="0" Grid.Row="0" x:Name="MusicControl0" />
+            <local:MusicControl Grid.Column="1" Grid.Row="0" x:Name="MusicControl1" />
+            <!--<local:MusicControl Grid.Column="0" Grid.Row="1" x:Name="MusicControl2" />
+            <local:MusicControl Grid.Column="1" Grid.Row="1" x:Name="MusicControl3" />-->
+        </Grid>
+    </SwapChainBackgroundPanel>
+
+</Page>

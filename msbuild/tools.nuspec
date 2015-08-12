@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>FerretFaceBuildTools</id>
+    <version>1.0.0</version>
+    <title>Build Tools</title>
+    <authors>Peter Spada</authors>
+    <owners>Peter Spada</owners>
+    <projectUrl>http://ferretfacegames.com</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Build tools</description>
+    <releaseNotes>Initial release</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>build</tags>
+  </metadata>
+  <files>
+    <file src="..\out\Release.x64\pack4\bin\pack4.exe" />
+    <file src="..\out\Release.x64\pack4\bin\util.dll" />
+  </files>
+</package>

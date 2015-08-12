@@ -1,0 +1,99 @@
+string name { "Shaders Package" }
+
+new shader("LineArtVS_4_0")
+{
+	string file { "Graph\Shader\2d.hlsl" }
+	string target { "vs_4_0" }
+	string entry { "LineArtVS" }
+}
+
+new shader("LineArtVS_9_1")
+{
+	string file { "Graph\Shader\2d.hlsl" }
+	string target { "vs_4_0_level_9_1" }
+	string entry { "LineArtVS" }
+}
+
+new shader("LineArtPS_4_0")
+{
+	string file { "Graph\Shader\2d.hlsl" }
+	string target { "ps_4_0" }
+	string entry { "LineArtPS" }
+}
+
+new shader("LineArtPS_9_1")
+{
+	string file { "Graph\Shader\2d.hlsl" }
+	string target { "ps_4_0_level_9_1" }
+	string entry { "LineArtPS" }
+}
+
+new shader("SpriteVS_4_0")
+{
+	string file { "Graph\Shader\2d.hlsl" }
+	string target { "vs_4_0" }
+	string entry { "SpriteVS" }
+}
+
+new shader("SpriteVS_9_1")
+{
+	string file { "Graph\Shader\2d.hlsl" }
+	string target { "vs_4_0_level_9_1" }
+	string entry { "SpriteVS" }
+}
+
+new shader("SpritePS_4_0")
+{
+	string file { "Graph\Shader\2d.hlsl" }
+	string target { "ps_4_0" }
+	string entry { "SpritePS" }
+}
+
+new shader("SpritePS_9_1")
+{
+	string file { "Graph\Shader\2d.hlsl" }
+	string target { "ps_4_0_level_9_1" }
+	string entry { "SpritePS" }
+}
+
+new shader("SpriteAlphaPS_4_0")
+{
+	string file { "Graph\Shader\2d.hlsl" }
+	string target { "ps_4_0" }
+	string entry { "SpriteAlphaPS" }
+}
+
+new shader("SpriteAlphaPS_9_1")
+{
+	string file { "Graph\Shader\2d.hlsl" }
+	string target { "ps_4_0_level_9_1" }
+	string entry { "SpriteAlphaPS" }
+}
+
+new shader("MultiSpriteVS_4_0")
+{
+	string file { "Graph\Shader\2d.hlsl" }
+	string target { "vs_4_0" }
+	string entry { "MultiSpriteVS" }
+}
+
+new shader("MultiSpriteVS_9_1")
+{
+	string file { "Graph\Shader\2d.hlsl" }
+	string target { "vs_4_0_level_9_1" }
+	string entry { "MultiSpriteVS" }
+}
+
+new shader("MultiSpritePS_4_0")
+{
+	string file { "Graph\Shader\2d.hlsl" }
+	string target { "ps_4_0" }
+	string entry { "MultiSpritePS" }
+}
+
+new shader("MultiSpritePS_9_1")
+{
+	string file { "Graph\Shader\2d.hlsl" }
+	string target { "ps_4_0_level_9_1" }
+	string entry { "MultiSpritePS" }
+}

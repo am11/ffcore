@@ -1,0 +1,8 @@
+..=cd ..
+git="%ProgramFiles(x86)%\Git\bin\git.exe" $*
+nuget="%DevRoot%\msbuild\nuget.exe" $*
+powershell="%windir%\System32\WindowsPowerShell\v1.0\powershell.exe" $*
+src=pushd "%DevRoot%\src" $*
+tfpt="%ProgramFiles(x86)%\Microsoft Team Foundation Server 2013 Power Tools\tfpt.exe" $*
+vs="%VSINSTALLDIR%Common7\IDE\devenv.exe" $*
+vstest="%VSINSTALLDIR%Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe" $*

@@ -1,0 +1,15 @@
+# root dirs
+/nuget/
+/out/
+/personal/
+/tools/
+
+# sub dirs
+bin/
+obj/
+
+# files
+*.log
+*.suo
+*.user
+*.vspscc

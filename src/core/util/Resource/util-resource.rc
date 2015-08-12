@@ -1,0 +1,171 @@
+#include <afxres.h>
+#include "Resource/util-resource.h"
+#pragma code_page(1252)
+
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+#ifndef _LIB
+
+VS_VERSION_INFO VERSIONINFO
+    FILEVERSION 4,0,0,0
+    PRODUCTVERSION 4,0,0,0
+    FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+    FILEFLAGS 0x1L
+#else
+    FILEFLAGS 0x0L
+#endif
+    FILEOS 0x40004L
+    FILETYPE 0x2L
+    FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Ferret Face Games"
+            VALUE "FileDescription", "Ferret Face Games - Util Library"
+            VALUE "FileVersion", "1.0.0.0"
+            VALUE "GUID", "{0c55d6ed-16e8-404c-9e11-211a81aa74f8}"
+            VALUE "InternalName", "util"
+            VALUE "LegalCopyright", "Copyright (C) 2014"
+            VALUE "OriginalFilename", "util.dll"
+            VALUE "ProductName", "Ferret Face Games - Util Library"
+            VALUE "ProductVersion", "1.0.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RCDATA
+//
+
+ID_SHADER_PACKAGE RCDATA "Shaders.pack4"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// TYPELIB
+//
+
+ID_TYPELIB_INTEROP TYPELIB "ferretface.interop.tlb"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SPLASH_SCREEN DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_SETFOREGROUND | DS_FIXEDSYS | DS_CENTER | WS_VISIBLE | WS_POPUP
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL "Loading",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,10,160,290,8,WS_EX_TRANSPARENT
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_APP_CL_BAD_PARAM          "Command line: Invalid parameter: %s"
+    IDS_APP_CL_BUFFERS            "Command line: Set back buffers: %d"
+    IDS_APP_CL_CLEAR_SCORES       "Command line: Clear high scores"
+    IDS_APP_CL_DEFAULT_OPTIONS    "Command line: Set default options"
+    IDS_APP_CL_FIRST_RUN          "Command line: First run after setup (set default options)"
+    IDS_APP_CL_FPS_OFF            "Command line: FPS off"
+    IDS_APP_CL_FPS_ON             "Command line: FPS on"
+    IDS_APP_CL_FS_OFF             "Command line: Full screen off"
+    IDS_APP_CL_FS_ON              "Command line: Full screen on"
+    IDS_APP_CL_HELP               "Command line: Showing help"
+    IDS_APP_CL_PADDING            "Command line: Set padding: %d"
+    IDS_APP_CL_SOUND_OFF          "Command line: Sound off"
+    IDS_APP_CL_SOUND_ON           "Command line: Sound on"
+    IDS_APP_CL_VSYNC_OFF          "Command line: Vsync off"
+    IDS_APP_CL_VSYNC_ON           "Command line: Vsync on"
+    IDS_APP_CL_WIN8_SERVER        "Command line: Win8 app server name: %s"
+    IDS_APP_COMPANY               "Ferret Face Games"
+    IDS_APP_LOG_WITH_TIME         "%s %s (%u): %s"
+    IDS_APP_OPTIONS_FILE          "%s %s settings.pack4"
+    IDS_APP_PARSE_COMMAND_LINE    "Parsing command line: %s"
+    IDS_APP_RESTORING_STATE       "Restoring app state"
+    IDS_APP_SAVING_STATE          "Saving app state"
+    IDS_APP_SCORES_FILE           "%s %s scores.pack4"
+    IDS_APP_SHUTDOWN              "Shutdown"
+    IDS_APP_STARTUP               "Startup"
+    IDS_APP_STARTUP_DONE          "Startup completed"
+    IDS_BUTTON_NAME               "Button %lu"
+    IDS_COMBINED_JOYSTICK_NAME    "Any Controller"
+    IDS_ERR_ADAPTER               "Failed to initialize a Direct3D video card."
+    IDS_ERR_DIRECT3D              "Failed to initialize Direct3D. Your video card probably doesn't support Direct3D version 10."
+    IDS_ERR_DIRECTINPUT           "Failed to initialize DirectInput."
+    IDS_ERR_DIRECTXMATH           "Failed to initialize DirectX Math (CPU doesn't support it)."
+    IDS_ERR_MOUSE                 "Failed to initialize the mouse."
+    IDS_ERR_RENDER_2D             "Failed to initialize the 2D renderer."
+    IDS_ERR_RENDER_3D             "Failed to initialize the 3D renderer."
+    IDS_ERR_RENDER_TARGET         "Failed to initialize a Direct3D render target."
+    IDS_ERR_TOUCH                 "Failed to initialize touch screen support."
+    IDS_ERR_DEPTH_BUFFER          "Failed to initialize a Direct3D depth buffer."
+    IDS_KEYBOARD_NAME             "Keyboard"
+    IDS_LEGACY_JOYSTICK_NAME      "Controller"
+    IDS_MOUSE_NAME                "Mouse"
+    IDS_STICK0                    "Stick 1"
+    IDS_STICK1                    "Stick 2"
+    IDS_STICK_POV                 "D-Pad"
+    IDS_STICK_UNKNOWN             "Pad"
+    IDS_TOUCH_NAME                "Touch"
+    IDS_TRIGGER_UNKNOWN           "Unknown"
+    IDS_XBOX_BUTTON_A             "A Button"
+    IDS_XBOX_BUTTON_B             "B Button"
+    IDS_XBOX_BUTTON_BACK          "Back"
+    IDS_XBOX_BUTTON_LSHOULDER     "Left Shoulder Button"
+    IDS_XBOX_BUTTON_LTHUMB        "Left Thumb Button"
+    IDS_XBOX_BUTTON_RSHOULDER     "Right Shoulder Button"
+    IDS_XBOX_BUTTON_RTHUMB        "Right Thumb Button"
+    IDS_XBOX_BUTTON_START         "Start"
+    IDS_XBOX_BUTTON_X             "X Button"
+    IDS_XBOX_BUTTON_Y             "Y Button"
+    IDS_XBOX_JOYSTICK_NAME        "Xbox Controller %lu"
+    IDS_XBOX_LTRIGGER             "Left Trigger"
+    IDS_XBOX_PAD_DIGITAL          "D-Pad"
+    IDS_XBOX_PAD_LEFT             "Left Stick"
+    IDS_XBOX_PAD_RIGHT            "Right Stick"
+    IDS_XBOX_RTRIGGER             "Right Trigger"
+    IDS_APP_CLEANUP               "Bye bye"
+    IDS_APP_LOADING_OPTIONS       "Loading options: %s"
+    IDS_APP_SAVING_OPTIONS        "Saving options: %s"
+    IDS_APP_RUN_MAIN_LOOP         "Running main loop"
+    IDS_APP_WINDOW_CLOSE          "Main window closing"
+    IDS_APP_WINDOW_DESTROY        "Main window destroyed"
+    IDS_APP_INIT_DIRECT3D         "Initializing Direct3D"
+    IDS_APP_INIT_RENDER_TARGET    "Initializing Render Target"
+    IDS_APP_INIT_DEPTH_BUFFER     "Initializing Depth Buffer"
+    IDS_APP_INIT_RENDER_2D        "Initializing 2D Renderer"
+    IDS_APP_INIT_RENDER_3D        "Initializing 3D Renderer"
+    IDS_APP_INIT_KEYBOARD         "Initializing Keyboard"
+    IDS_APP_INIT_MOUSE            "Initializing Mouse"
+    IDS_APP_INIT_TOUCH            "Initializing Touch"
+    IDS_APP_INIT_JOYSTICKS        "Initializing Joysticks"
+    IDS_APP_INIT_AUDIO            "Initializing Audio"
+    IDS_ERR_KEYBOARD              "Failed to initialize the keyboard."
+    IDS_ERR_AUDIO                 "Failed to initialize audio."
+    IDS_APP_SUSPEND               "App suspending"
+    IDS_APP_RESUME                "App resuming from suspension"
+    IDS_APP_WINDOW_CREATED        "Main window created"
+    IDS_APP_WINDOW_CREATING       "Creating main window"
+    IDS_STATUS_LOADING            "Loading"
+    IDS_STATUS_READY              "Ready"
+	IDS_APP_CL_AUTOMATION         "Command line: Starting app in automation mode"
+END

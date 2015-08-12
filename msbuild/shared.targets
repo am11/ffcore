@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Target Name="CreateOutputDirs">
+    <MakeDir Directories="$(OutDir);$(IntDir);$(GeneratedFilesDir)" />
+  </Target>
+
+  <Target Name="CompilePack4" Condition=" '@(Pack4)' != '' " Inputs="@(Pack4)" Outputs="@(Pack4 -> '$(GeneratedFilesDir)%(Filename)')">
+    <Error Text="Package not installed: $(ToolsDir)\pack4.exe" Condition="!Exists('$(ToolsDir)\pack4.exe')" />
+    <MakeDir Directories="$(GeneratedFilesDir)" Condition="!Exists('$(GeneratedFilesDir)')" />
+    <Exec Command="&quot;$(ToolsDir)\pack4.exe&quot; /compile &quot;%(Pack4.FullPath)&quot; /out &quot;$(GeneratedFilesDir)%(Pack4.Filename)&quot; /include &quot;$(MSBuildProjectDirectory)&quot; /include &quot;$(GeneratedFilesDir)&quot;" />
+  </Target>
+  
+  <Target Name="DeploymentContentPack4" Condition=" '@(Pack4)' != '' and '$(AppType)' == 'Metro' ">
+    <ItemGroup>
+      <None Include="@(Pack4 -> '$(GeneratedFilesDir)%(Filename)')">
+        <DeploymentContent>true</DeploymentContent>
+      </None>
+    </ItemGroup>
+  </Target>
+
+  <ItemGroup>
+    <ProjectReference Include="$(DevRoot)\msbuild\setup.proj" />
+  </ItemGroup>
+</Project>

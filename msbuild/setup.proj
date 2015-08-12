@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="shared.props" />
+  <Import Project="shared.targets" />
+
+  <Target Name="RestoreBuildPackages" Condition="!Exists('$(ToolsDir)')">
+    <Exec Command="&quot;$(DevRoot)\msbuild\nuget.exe&quot; install FerretFaceBuildTools -Version $(FerretFaceToolsVersion)" />
+    <Error Condition="!Exists('$(ToolsDir)')" Text="Failed to restore package FerretFaceBuildTools.$(FerretFaceToolsVersion)" />
+  </Target>
+
+  <Target Name="Build" DependsOnTargets="RestoreBuildPackages" />
+  <Target Name="Clean" />
+  <Target Name="GetCopyToOutputDirectoryItems" />
+  <Target Name="GetNativeManifest" />
+  <Target Name="GetPackagingOutputs" />
+  <Target Name="GetTargetPath" />
+  <Target Name="GetTargetPathWithTargetPlatformMoniker" />
+
+</Project>
